@@ -2,9 +2,17 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Utilities.GWD;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+//import dev.failsafe.internal.util.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
+
+import java.time.Duration;
+
+import static dev.failsafe.internal.util.Assert.*;
 
 public class _01_LoginSteps {
 
@@ -37,6 +45,16 @@ public class _01_LoginSteps {
 
         //throw new io.cucumber.java.PendingException();
         System.out.println("login başarılı");
+
+
+//        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.textToBePresentInElement(dc.headText,"Internship"));
+//
+//        Assert.assertTrue(dc.headText.getText().equals("Internship"));
+
+        dc.verifyContainsText(dc.headText,"Internship");
+
+
 
     }
 }

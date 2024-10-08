@@ -12,16 +12,17 @@ public DialogContent(){
     PageFactory.initElements(GWD.getDriver(),this);
 
 }
-
-
-    @FindBy(css="mat-input-6")
+    @FindBy(css="[formcontrolname='username']")
     public WebElement username;
 
-    @FindBy(css="mat-input-7")
+    @FindBy(css="[formcontrolname='password']")
     public WebElement password;
 
-    @FindBy(css="")
+    @FindBy(css="[aria-label='LOGIN']")
     public WebElement loginButton;
 
+    @FindBy(css="span[class='mat-mdc-tooltip-trigger logo-text']")
+    public WebElement headText;
 
 }
+////span[@class='mat-mdc-tooltip-trigger logo-text']
