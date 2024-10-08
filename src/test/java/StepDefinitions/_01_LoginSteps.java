@@ -26,7 +26,7 @@ public class _01_LoginSteps {
 //        dc.loginButton.click();
 
         dc.mySendKeys(dc.username,"turkeyts");
-        dc.mySendKeys(dc.password,"");
+        dc.mySendKeys(dc.password,"TechnoStudy123");
         dc.myClick(dc.loginButton);
 
 

@@ -14,10 +14,10 @@ public DialogContent(){
 }
 
 
-    @FindBy(css="")
+    @FindBy(css="mat-input-6")
     public WebElement username;
 
-    @FindBy(css="")
+    @FindBy(css="mat-input-7")
     public WebElement password;
 
     @FindBy(css="")
