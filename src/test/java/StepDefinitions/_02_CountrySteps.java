@@ -45,4 +45,8 @@ public class _02_CountrySteps {
         dc.verifyContainsText(dc.successMessage,"success");
 
     }
+
+    @When("Create a country name as {string} code as {string}")
+    public void createACountryNameAsCodeAs(String ulkeAdi, String ulkeKodu) {
+    }
 }
