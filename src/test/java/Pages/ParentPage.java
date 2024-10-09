@@ -46,7 +46,7 @@ public class ParentPage {
 
     public void verifyContainsText(WebElement element, String value)
     {
-
+        wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.textToBePresentInElement(element,value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
 
@@ -55,3 +55,17 @@ public class ParentPage {
 
 
 }
+//Text e bir veri göndermek için
+//gerekli olanlar
+//
+//-Görünür olana kadar bekle(wait)
+//-Elemente kadar scroll yap (var ise)
+//-içini temizle
+//-veriyi gönder
+//
+//
+//Button için neler yapılır
+//
+//-Clickable olana kadar bekle(wait)
+//-Elemente kadar scroll yap
+//-Click yap

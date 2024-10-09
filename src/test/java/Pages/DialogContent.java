@@ -24,5 +24,27 @@ public DialogContent(){
     @FindBy(css="span[class='mat-mdc-tooltip-trigger logo-text']")
     public WebElement headText;
 
+    @FindBy(xpath="//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    public WebElement addButton;
+
+
+    @FindBy(xpath = "//ns-text-field[@formcontrolname='name']//input")
+    public WebElement nameInput;
+
+    @FindBy(xpath = "//ns-text-field[@formcontrolname='code']//input")
+    public WebElement codeInput;
+
+    @FindBy(xpath="//ms-save-button[@class='ng-star-inserted']//button")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//*[contains(text(),'successfully')]")
+    public WebElement successMessage;
+
+
 }
 ////span[@class='mat-mdc-tooltip-trigger logo-text']
+
+//ms-add-button[@tooltip='COUNTRY.TITLE.ADD']//button
+//ms-add-button[@tooltip='STATE.TITLE.ADD']//button
+
+//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button
