@@ -49,9 +49,31 @@ public DialogContent(){
     @FindBy(tagName = "mat-panel-description")
     public WebElement messageBox;
 
+    @FindBy(xpath = "//ms-text-field/input[@placeholder='Name']")
+    public WebElement searchInput;
+
+    @FindBy(xpath = "//ms-search-button/div/button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//ms-delete-button//button")
+    public WebElement deleteImageBtn;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteDialogBtn;
+
+
     public void verifyMessageContainsText(String value){
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
         Assert.assertTrue( this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+    }
+
+
+    public void deleteItem(String deleteName){
+        mySendKeys(searchInput,deleteName);
+        myClick(searchButton);
+        myClick(deleteImageBtn);
+        myClick(deleteDialogBtn);
+
     }
 
 }
