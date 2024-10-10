@@ -4,16 +4,14 @@ import Pages.DialogContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class _03_CitizenShipSteps {
-
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
 
 
-    @When("Create a CitizenShip")
-    public void createACitizenShip() {
-    }
+
 
     @And("Navigate to CitizenShip")
     public void navigateToCitizenShip() {
@@ -22,7 +20,22 @@ public class _03_CitizenShipSteps {
         ln.myClick(ln.citizenship);
     }
 
-    @When("Enter username and password and click login button")
-    public void enterUsernameAndPasswordAndClickLoginButton() {
+    @When("Create a CitizenShip")
+    public void createACitizenShip() {
+        String citizenshipName= RandomStringUtils.randomAlphanumeric(8); // 8 tane karışık harf
+        String citizenshipShortName= RandomStringUtils.randomNumeric(4); // 4 tane karşık rakam
+
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,citizenshipName);
+        dc.mySendKeys(dc.shortName,citizenshipShortName);
+        dc.myClick(dc.saveButton);
+    }
+
+    @When("Create a CitizenShip name as {string} shortKod as {string}")
+    public void createACitizenShipNameAsShortKodAs(String name, String sKod) {
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,name);
+        dc.mySendKeys(dc.shortName,sKod);
+        dc.myClick(dc.saveButton);
     }
 }
