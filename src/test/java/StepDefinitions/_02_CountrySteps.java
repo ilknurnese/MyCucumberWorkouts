@@ -35,7 +35,6 @@ public class _02_CountrySteps {
 
         //kaydet butonuna bas
 
-
     }
 
     @Then("Success message should be displayed")

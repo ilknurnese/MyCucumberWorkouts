@@ -7,7 +7,7 @@ Feature: CitizenShip Functinality
   Scenario: Create a citizenShip
 
     Given Navigate to Campus
-    When Enter username and password and click login button
+    When Enter username and password and Click login button
     Then User should login successfully
     And Navigate to CitizenShip
     When Create a CitizenShip

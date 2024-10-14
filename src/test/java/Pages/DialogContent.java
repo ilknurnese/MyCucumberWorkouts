@@ -71,6 +71,10 @@ public DialogContent(){
     public void deleteItem(String deleteName){
         mySendKeys(searchInput,deleteName);
         myClick(searchButton);
+
+        //search butondan sonra bekletir ki sayfa gelsin
+        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+
         myClick(deleteImageBtn);
         myClick(deleteDialogBtn);
 
