@@ -11,7 +11,6 @@ public class _03_CitizenShipSteps {
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
 
-
     @And("Navigate to CitizenShip")
     public void navigateToCitizenShip() {
         ln.myClick(ln.setup);

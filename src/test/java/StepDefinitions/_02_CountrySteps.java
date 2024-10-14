@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
-
+import org.testng.Assert;
 
 public class _02_CountrySteps {
 
@@ -25,16 +25,15 @@ public class _02_CountrySteps {
     public void createACountry() {
 
         String ulkeAdi= RandomStringUtils.randomAlphanumeric(8); // 8 tane karışık harf
-
         String ulkeKodu=RandomStringUtils.randomNumeric(4);
         dc.myClick(dc.addButton);
 
         //isim ve kodu gönder
-        dc.mySendKeys(dc.nameInput,"ulkeAdi");
-        dc.mySendKeys(dc.codeInput,"ulkeKodu");
+        dc.mySendKeys(dc.nameInput,ulkeAdi);
+        dc.mySendKeys(dc.codeInput,ulkeKodu);
 
         //kaydet butonuna bas
-
+        dc.myClick(dc.saveButton);
     }
 
     @Then("Success message should be displayed")
