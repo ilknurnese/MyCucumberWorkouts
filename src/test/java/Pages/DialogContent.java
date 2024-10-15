@@ -8,42 +8,42 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class DialogContent extends ParentPage{
+public class DialogContent extends ParentPage {
 
-public DialogContent(){
+    public DialogContent() {
 
-    PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
 
-}
-    @FindBy(css="[formcontrolname='username']")
+    }
+
+    @FindBy(css = "[formcontrolname='username']")
     public WebElement username;
 
-    @FindBy(css="[formcontrolname='password']")
+    @FindBy(css = "[formcontrolname='password']")
     public WebElement password;
 
-    @FindBy(css="[aria-label='LOGIN']")
+    @FindBy(css = "[aria-label='LOGIN']")
     public WebElement loginButton;
 
-    @FindBy(css="span[class='mat-mdc-tooltip-trigger logo-text']")
+    @FindBy(css = "span[class='mat-mdc-tooltip-trigger logo-text']")
     public WebElement headText;
 
-    @FindBy(xpath="//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     public WebElement addButton;
 
-
-    @FindBy(xpath = "//ns-text-field[@formcontrolname='name']//input")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     public WebElement nameInput;
 
     @FindBy(xpath = "//ns-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
 
-    @FindBy(xpath="//ms-save-button[@class='ng-star-inserted']//button")
+    @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
     public WebElement saveButton;
 
     @FindBy(xpath = "//*[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName' ]//input")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
     public WebElement shortName;
 
     @FindBy(tagName = "mat-panel-description")
@@ -61,15 +61,37 @@ public DialogContent(){
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    public WebElement integrationCode;
 
-    public void verifyMessageContainsText(String value){
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
-        Assert.assertTrue( this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    public WebElement priorityCode;
+
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']//button")
+    public WebElement toggleBar;
+
+    @FindBy(xpath = "(//span[text()='Nationalities'])[1]")
+    public WebElement nationalities;
+
+    @FindBy(xpath = "(//ms-save-button[@class='ng-star-inserted']//button)[2]")
+    public WebElement saveClose;
+
+    ////mat-select[@formcontrolname='id']//span
+    @FindBy(xpath = "(//mat-select[@role='combobox'])[3]//span")
+    public WebElement countrySelect;
+
+    @FindBy(xpath = "(//mat-option[@role='option'])[3]//span")
+    public WebElement countryOption;
+
+
+    public void verifyMessageContainsText(String value) {
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
+        Assert.assertTrue(this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
     }
 
 
-    public void deleteItem(String deleteName){
-        mySendKeys(searchInput,deleteName);
+    public void deleteItem(String deleteName) {
+        mySendKeys(searchInput, deleteName);
         myClick(searchButton);
 
         //search butondan sonra bekletir ki sayfa gelsin
@@ -79,6 +101,28 @@ public DialogContent(){
         myClick(deleteDialogBtn);
 
     }
+
+
+    public WebElement getWebElement(String strElementName) {
+
+        switch (strElementName) {
+
+            case "addButton" : return this.addButton;
+            case "nameInput" : return this.nameInput;
+            case "codeInput" : return this.codeInput;
+            case "saveButton" : return this.saveButton;
+            case "shortName" : return this.shortName;
+            case "integrationCode" : return this.integrationCode;
+            case "priorityCode" : return this.priorityCode;
+            case "toggleBar" : return this.toggleBar;
+            case "saveClose" : return this.saveClose;
+            case "countrySelect" : return this.countrySelect;
+            case "countryOption" : return this.countryOption;
+
+        }
+        return null;
+    }
+
 
 }
 ////span[@class='mat-mdc-tooltip-trigger logo-text']

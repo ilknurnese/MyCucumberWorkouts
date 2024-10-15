@@ -15,8 +15,11 @@
       Scenario Outline: Country with Parameter
         When Create a country name as "<name>" code as "<code>"
         Then Success message should be displayed
+        When Create a country name as "<name>" code as "<code>"
+        Then Already exist message should be displayed
         When user delete name as "<name>"
         Then Success message should be displayed
+
 
 
         Examples:       | name    | code    |
