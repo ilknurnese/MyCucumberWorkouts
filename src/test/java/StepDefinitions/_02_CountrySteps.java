@@ -27,7 +27,6 @@ public class _02_CountrySteps {
         String ulkeAdi= RandomStringUtils.randomAlphanumeric(8); // 8 tane karışık harf
         String ulkeKodu=RandomStringUtils.randomNumeric(4);
         dc.myClick(dc.addButton);
-
         //isim ve kodu gönder
         dc.mySendKeys(dc.nameInput,ulkeAdi);
         dc.mySendKeys(dc.codeInput,ulkeKodu);

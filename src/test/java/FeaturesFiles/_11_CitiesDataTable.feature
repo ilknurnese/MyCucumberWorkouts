@@ -8,6 +8,7 @@ Feature: Cities Functionality
     Then User should login successfully
     And Navigate to Country
 
+  @RegressionTest
     Scenario: Create and Delete cities
 
       And Click on the Element in LeftNav

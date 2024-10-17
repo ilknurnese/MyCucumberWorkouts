@@ -60,6 +60,13 @@
     <scope>test</scope>
 </dependency>
 
+    <dependency>
+        <groupId>tech.grasshopper</groupId>
+        <artifactId>extentreports-cucumber7-adapter</artifactId>
+        <version>1.14.0</version>
+        <scope>test</scope>
+    </dependency>
+
 <!--        commons tool-->
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
