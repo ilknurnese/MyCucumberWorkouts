@@ -1,6 +1,6 @@
 Feature: Datatable Örnek
 
-  Scenario: User List
+  Scenario: User write
     When Write username "Neşe"
     When Write username and password "neşe" and "1234"
 
@@ -17,4 +17,5 @@ Feature: Datatable Örnek
       | İbrahim | 12346 |
       | Neşe    | 12347 |
       | Engin   | 12348 |
+
 

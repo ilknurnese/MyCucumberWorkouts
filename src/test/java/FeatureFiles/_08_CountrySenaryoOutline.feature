@@ -8,7 +8,7 @@
 
     Background: #Before Senaryo
       Given Navigate to Campus
-      When Enter username and password and Click login button
+      When Enter username and password and click login button
       Then User should login successfully
       And Navigate to Country
 

@@ -21,7 +21,7 @@ public class _01_LoginSteps {
 
     @Given("Navigate to Campus")
     public void navigate_to_campus() {
-        System.out.println("campus acildi");
+        //System.out.println("campus acildi");
         GWD.getDriver().get("https://test.mersys.io/");
     }
     @When("Enter username and password and Click login button")
@@ -55,6 +55,18 @@ public class _01_LoginSteps {
         dc.verifyContainsText(dc.headText,"Internship");
 
 
+
+    }
+
+    @When("Enter username and password and click login button")
+    public void enterUsernameAndPasswordAndClickLoginButton() {
+
+        System.out.println("kullanıcı adı ve şifre girildi");
+
+
+        dc.mySendKeys(dc.username,"turkeyts");
+        dc.mySendKeys(dc.password,"TechnoStudy123");
+        dc.myClick(dc.loginButton);
 
     }
 }
