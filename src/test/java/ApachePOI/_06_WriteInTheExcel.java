@@ -14,17 +14,18 @@ public class _06_WriteInTheExcel {
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheetAt(0);
 
-        int enSonSatir=sheet.getPhysicalNumberOfRows();
-        Row yeniSatir=sheet.createRow(enSonSatir);
-        Cell yeniHucre=yeniSatir.createCell(0);
+        int enSonSatir=sheet.getPhysicalNumberOfRows();// the last row number
+        Row yeniSatir=sheet.createRow(enSonSatir);  // create a new row after the last row
+        Cell yeniHucre=yeniSatir.createCell(0); //create a new cell on the new row
 
         yeniHucre.setCellValue("Merhaba");
-        inputStream.close();
+        inputStream.close();   // close reading mode
 
+        // to save the file
         FileOutputStream fileOutputStream=new FileOutputStream(path);
-        workbook.write(fileOutputStream);
-        workbook.close();
-        fileOutputStream.close();
+        workbook.write(fileOutputStream);  //save the workbook
+        workbook.close();  // clean the memory
+        fileOutputStream.close();   //close the save mode
 
         System.out.println("İşlem tamamlandı");
 
