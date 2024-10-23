@@ -13,6 +13,8 @@ import java.io.IOException;
 public class _08_NewExcelWrite {
     public static void main(String[] args) throws IOException {
 
+
+
         //There is no Excel file
         //create a workbook
         XSSFWorkbook workbook=new XSSFWorkbook(); // hafızadaki workbook
@@ -22,7 +24,7 @@ public class _08_NewExcelWrite {
         Cell yeniHucre=yeniSatir.createCell(0);
         yeniHucre.setCellValue("Merhaba Dünya");
 
-        String path="src/test/java/ApachePOI/resurces/YeniExcel.xlsx";
+        String path="src/test/java/ApachePOI/resources/YeniExcel.xlsx";
         FileOutputStream outputStream=new FileOutputStream(path);
         workbook.write(outputStream);
         workbook.close();

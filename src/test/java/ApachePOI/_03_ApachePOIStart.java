@@ -16,11 +16,13 @@ public class _03_ApachePOIStart {
         //hafızada (RAM de) workbook u alıp oluşturdu
         FileInputStream dosyaOkumaBaglantisi= new FileInputStream(path);
 
+      //  FileInputStream dosyaOkumaBaglantisi2=new FileInputStream("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx");
+
         //Dosya okuma istemcii üzerinde
         Workbook calismaKitabi= WorkbookFactory.create(dosyaOkumaBaglantisi);
 
         //çalışma sayfasını alıyorum
-        Sheet calismaSayfasi=calismaKitabi.getSheet("Sheet1");
+        Sheet calismaSayfasi=calismaKitabi.getSheet("sheet1");
 
         //istenen satırı al
         Row satir=calismaSayfasi.getRow(0);  ///0.satır

@@ -16,13 +16,17 @@ public class _04_ApachePOIGetAllData {
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheetAt(0);
 
-        //zoo.lenght kaç satır var
-        int rowCount=sheet.getPhysicalNumberOfRows();
+        //zoo.lenght kaç satır var : rowCount satır sayacı
+        int rowCount=sheet.getPhysicalNumberOfRows();  // 10 satır varr
+                                                        // yeni bilgi 11. satır : rowCount+1 ...
+                                                        // cell A:0 B : 1
 
         System.out.println("rowCount = " + rowCount);
 
         for (int i = 0; i < rowCount; i++) {
             Row row=sheet.getRow(i);  //satırı aldım
+
+            // hücre sayaç ..
             int cellCount=row.getPhysicalNumberOfCells(); // satırdaki rütun sayısı , zoo[i] length
 
             for (int j = 0; j < cellCount; j++) {
@@ -34,7 +38,6 @@ public class _04_ApachePOIGetAllData {
         }
 
         //2. yol
-
         for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
 
             for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {  //zoo[i] length
@@ -45,7 +48,6 @@ public class _04_ApachePOIGetAllData {
         }
 
         for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
-
 
         }
 

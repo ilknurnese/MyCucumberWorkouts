@@ -18,7 +18,7 @@ public class _07_Soru_2 {
         FileInputStream inputStream=new FileInputStream(path);
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheetAt(0);
-,
+
         int enSonSatir =0; //= sheet.getPhysicalNumberOfRows();
 
 

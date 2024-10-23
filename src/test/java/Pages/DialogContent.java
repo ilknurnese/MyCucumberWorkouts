@@ -37,6 +37,7 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "//ns-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
 
+
     @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
     public WebElement saveButton;
 
